@@ -4,6 +4,7 @@ public static class Globals
   public const int BOARD_HEIGHT = 10;
   public const int SIZE_CELL = 25;
   public const string TITLE_WINDOW = "Snake";
+  public const int MAX_SNAKE_SPEED = 100;
 
   public static Coordinate GetClamped(Coordinate coordinate)
   {

@@ -10,11 +10,10 @@ static class Program
   static CollisionsRecords _records;
   static PhysicsRouter _physicsRouter;
   static GamePhysics _physics;
-  static bool gameEnded;
-  static int _score;
 
   static Program()
   {
+    Locals = new Locals();
     var board = new Board(Globals.BOARD_WEIGHT, Globals.BOARD_HEIGHT);
     _factorySnake = new FactorySnake();
     _snake = _factorySnake.Spawn();
@@ -25,11 +24,10 @@ static class Program
     _physics = new GamePhysics(_snake, board, _physicsRouter);
     _records.GameEnd += () =>
     {
-      // Сделать поле нестатичным
-      gameEnded = true;
-
+      Locals.GameEnded = true;
     };
   }
+  public static Locals Locals { get; }
 
   static void Main(string[] args)
   {
@@ -38,11 +36,11 @@ static class Program
     SpawnApple();
     while (_render.IsWorking())
     {
-      if (gameEnded)
-        _render.DrawGameOver(_score);
+      if (Locals.GameEnded)
+        _render.DrawGameOver(Locals.Score);
       else
       {
-        _render.DrawScore(_score);
+        _render.DrawScore(Locals.Score);
         _render.DrawGame();
         // TODO: вынести инпуты в отдельный класс.
         // Сделать так, чтобы движения змейки были командой.
@@ -66,7 +64,7 @@ static class Program
     var apple = _factoryApples.Spawn();
     apple.OnSwallowed += apple =>
     {
-      _score += 10;
+      Locals.Score += 10;
       SpawnApple();
     };
   }
@@ -77,9 +75,10 @@ static class Program
     {
       _snake.Move();
       _physics.Step();
-      // TODO: вынести задержку в динамическую переменную. 
-      // Сделать возможность регулировать при помощи скорости.
-      await Task.Delay(500);
+
+      const int DELAY = 1000;
+      var step = DELAY / (Globals.MAX_SNAKE_SPEED + 1);
+      await Task.Delay(DELAY - step * Locals.SnakeSpeed);
     }
   }
 }
