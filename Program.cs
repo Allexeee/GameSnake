@@ -14,6 +14,8 @@ static class Program
   static Program()
   {
     Locals = new Locals();
+    Locals.SnakeSpeed = 50;
+
     var board = new Board(Globals.BOARD_WEIGHT, Globals.BOARD_HEIGHT);
     _factorySnake = new FactorySnake();
     _snake = _factorySnake.Spawn();
@@ -73,8 +75,11 @@ static class Program
   {
     while (true)
     {
-      _snake.Move();
-      _physics.Step();
+      if (Locals.SnakeSpeed > 0)
+      {
+        _snake.Move();
+        _physics.Step();
+      }
 
       const int DELAY = 1000;
       var step = DELAY / (Globals.MAX_SNAKE_SPEED + 1);

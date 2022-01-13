@@ -1,6 +1,6 @@
 public class SnakeStomach
 {
-  public List<Apple> Apples { get; }
+  List<Apple> _apples;
 
   Func<Coordinate> _tail;
 
@@ -8,14 +8,27 @@ public class SnakeStomach
 
   public SnakeStomach(Func<Coordinate> tail)
   {
-    Apples = new List<Apple>();
+    _apples = new List<Apple>();
     _tail = tail;
+  }
+
+  public IEnumerable<Coordinate> GetApples()
+  {
+    foreach (var apple in _apples)
+    {
+      yield return apple.Coordinate;
+    }
+  }
+
+  public void Add(Apple apple)
+  {
+    _apples.Add(apple);
   }
 
   public bool CanExtend(out Coordinate? coordinate)
   {
     var tail = _tail();
-    foreach (var apple in Apples)
+    foreach (var apple in _apples)
     {
       if (tail == apple.Coordinate)
       {
@@ -33,6 +46,6 @@ public class SnakeStomach
     if (_cache == default)
       throw new NullReferenceException(nameof(_cache));
 
-    Apples.Remove(_cache);
+    _apples.Remove(_cache);
   }
 }

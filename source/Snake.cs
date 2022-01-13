@@ -2,13 +2,12 @@ public class Snake
 {
   StorageBody _storageBody;
   SnakeMotion _motion;
-  SnakeStomach _stomach;
 
   public Snake(StorageBody _storage)
   {
     _storageBody = _storage;
     _motion = new SnakeMotion(() => _storageBody.GetAll());
-    _stomach = new SnakeStomach(() => _storageBody.GetTail());
+    Stomach = new SnakeStomach(() => _storageBody.GetTail());
     Head = new SnakeHead(() => _storageBody.GetHead());
     Body = new SnakeBody(() => _storageBody.GetTorso());
     Tail = new SnakeTail(() => _storageBody.GetTail());
@@ -18,20 +17,21 @@ public class Snake
   public SnakeHead Head { get; }
   public SnakeBody Body { get; }
   public SnakeTail Tail { get; }
+  public SnakeStomach Stomach { get; }
 
   public bool TrySetDirection(Direction direction) => _motion.TrySetDirection(direction);
 
   public void Swallow(Apple apple)
   {
     apple.OnSwallow();
-    _stomach.Apples.Add(apple);
+    Stomach.Add(apple);
   }
 
   public void Move()
   {
-    if (_stomach.CanExtend(out var coord))
+    if (Stomach.CanExtend(out var coord))
     {
-      _stomach.Extend();
+      Stomach.Extend();
 #pragma warning disable CS8604
       _storageBody.Add(coord);
     }

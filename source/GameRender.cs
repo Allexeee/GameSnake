@@ -3,7 +3,6 @@ using static Globals;
 
 public class GameRender
 {
-
   Board _board;
   Snake _snake;
   RenderBoard _renderMap;
@@ -61,6 +60,12 @@ public class GameRender
     foreach (var body in snake.Body.Coordinates)
     {
       _renderMap.cells[body.X, body.Y].color = Color.BLACK;
+    }
+
+    foreach (var apple in snake.Stomach.GetApples())
+    {
+      if (snake.Head.Coordinate == apple) continue;
+      _renderMap.cells[apple.X, apple.Y].color = Color.GRAY;
     }
   }
 
