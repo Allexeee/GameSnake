@@ -30,7 +30,7 @@ public class FactoryApple
       for (int y = 0; y < Globals.BOARD_HEIGHT; y++)
       {
         var result = true;
-        foreach (var sn in _snake.Body.Coordinates)
+        foreach (var sn in _snake.All)
         {
           if (sn.EqualsValues(x, y))
           {

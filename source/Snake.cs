@@ -14,6 +14,7 @@ public class Snake
     Tail = new SnakeTail(() => _storageBody.GetTail());
   }
 
+  public IEnumerable<Coordinate> All => _storageBody.GetAll();
   public SnakeHead Head { get; }
   public SnakeBody Body { get; }
   public SnakeTail Tail { get; }
