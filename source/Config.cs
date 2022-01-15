@@ -1,10 +1,13 @@
-public static class Globals
+public static class Config
 {
   public const int BOARD_WEIGHT = 10;
   public const int BOARD_HEIGHT = 10;
   public const int SIZE_CELL = 25;
   public const string TITLE_WINDOW = "Snake";
   public const int MAX_SNAKE_SPEED = 100;
+
+  public const int WEIGHT = BOARD_WEIGHT * SIZE_CELL;
+  public const int HEIGHT = BOARD_HEIGHT * SIZE_CELL;
 
   public static Coordinate GetClamped(Coordinate coordinate)
   {

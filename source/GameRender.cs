@@ -1,5 +1,5 @@
-using Raylib_cs;
-using static Globals;
+using Raylib_CsLo;
+using static Config;
 
 public class GameRender
 {
@@ -17,7 +17,7 @@ public class GameRender
   public void OpenWindow()
   {
     Raylib.InitWindow(_board.Width * SIZE_CELL, _board.Height * SIZE_CELL, TITLE_WINDOW);
-    Raylib.SetTargetFPS(30);
+    // Raylib.SetTargetFPS(30);
   }
 
   public void CloseWindow()
@@ -30,7 +30,7 @@ public class GameRender
   public void DrawGame()
   {
     Raylib.BeginDrawing();
-    Raylib.ClearBackground(Color.WHITE);
+    Raylib.ClearBackground(Raylib.WHITE);
     _renderMap.Clear();
     Prepare(_snake);
     Prepare(_board.Apples);
@@ -41,10 +41,10 @@ public class GameRender
   public void DrawGameOver(int score)
   {
     Raylib.BeginDrawing();
-    Raylib.ClearBackground(Color.WHITE);
+    Raylib.ClearBackground(Raylib.WHITE);
     var width = Raylib.GetScreenWidth();
     var height = Raylib.GetScreenHeight();
-    Raylib.DrawText($"Game Over\r\nScore: {score}", width / 2 - 50, height / 2 - 50, 20, Color.BLACK);
+    Raylib.DrawText($"Game Over\r\nScore: {score}", width / 2 - 50, height / 2 - 50, 20, Raylib.BLACK);
     Raylib.EndDrawing();
   }
 
@@ -55,17 +55,17 @@ public class GameRender
 
   void Prepare(Snake snake)
   {
-    _renderMap.cells[snake.Head.Coordinate.X, snake.Head.Coordinate.Y].color = Color.RED;
+    _renderMap.cells[snake.Head.Coordinate.X, snake.Head.Coordinate.Y].color = Raylib.RED;
 
     foreach (var body in snake.Body.Coordinates)
     {
-      _renderMap.cells[body.X, body.Y].color = Color.BLACK;
+      _renderMap.cells[body.X, body.Y].color = Raylib.BLACK;
     }
 
     foreach (var apple in snake.Stomach.GetApples())
     {
       if (snake.Head.Coordinate == apple) continue;
-      _renderMap.cells[apple.X, apple.Y].color = Color.GRAY;
+      _renderMap.cells[apple.X, apple.Y].color = Raylib.GRAY;
     }
   }
 
@@ -73,7 +73,7 @@ public class GameRender
   {
     foreach (var apple in apples)
     {
-      _renderMap.cells[apple.Coordinate.X, apple.Coordinate.Y].color = Color.GREEN;
+      _renderMap.cells[apple.Coordinate.X, apple.Coordinate.Y].color = Raylib.GREEN;
     }
   }
 }

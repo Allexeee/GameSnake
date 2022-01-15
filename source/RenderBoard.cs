@@ -1,5 +1,5 @@
-using Raylib_cs;
-using static Globals;
+using Raylib_CsLo;
+using static Config;
 
 public class RenderBoard
 {
@@ -25,7 +25,7 @@ public class RenderBoard
       for (int x = 0; x < cells.GetLength(0); x++)
       {
         var cell = cells[x, y];
-        cell.color = Color.WHITE;
+        cell.color = Raylib.WHITE;
       }
     }
   }

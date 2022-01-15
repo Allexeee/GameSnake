@@ -9,7 +9,7 @@ public class Locals
   {
     get => _snakeSpeed; set
     {
-      _snakeSpeed = Math.Clamp(value, _snakeSpeed, Globals.MAX_SNAKE_SPEED);
+      _snakeSpeed = Math.Clamp(value, _snakeSpeed, Config.MAX_SNAKE_SPEED);
     }
   }
 }

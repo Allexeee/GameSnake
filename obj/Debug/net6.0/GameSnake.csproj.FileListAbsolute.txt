@@ -13,9 +13,16 @@ D:\Profiles\aleks\Documents\GameSnake\obj\Debug\net6.0\GameSnake.dll
 D:\Profiles\aleks\Documents\GameSnake\obj\Debug\net6.0\ref\GameSnake.dll
 D:\Profiles\aleks\Documents\GameSnake\obj\Debug\net6.0\GameSnake.pdb
 D:\Profiles\aleks\Documents\GameSnake\obj\Debug\net6.0\GameSnake.genruntimeconfig.cache
-D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\Raylib-cs.dll
 D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\linux-x64\native\libraylib.so
 D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\osx-x64\native\libraylib.dylib
 D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x64\native\raylib.dll
 D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x86\native\raylib.dll
 D:\Profiles\aleks\Documents\GameSnake\obj\Debug\net6.0\GameSnake.csproj.CopyComplete
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\Microsoft.Toolkit.HighPerformance.dll
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\Raylib-CsLo.dll
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x64\native\raylib.pdb
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x86\native\physac.dll
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x86\native\physac.pdb
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x86\native\raygui.dll
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x86\native\raygui.pdb
+D:\Profiles\aleks\Documents\GameSnake\bin\Debug\net6.0\runtimes\win-x86\native\raylib.pdb

@@ -25,9 +25,9 @@ public class FactoryApple
   List<Coordinate> GetFreeCells()
   {
     _cache.Clear();
-    for (int x = 0; x < Globals.BOARD_WEIGHT; x++)
+    for (int x = 0; x < Config.BOARD_WEIGHT; x++)
     {
-      for (int y = 0; y < Globals.BOARD_HEIGHT; y++)
+      for (int y = 0; y < Config.BOARD_HEIGHT; y++)
       {
         var result = true;
         foreach (var sn in _snake.All)

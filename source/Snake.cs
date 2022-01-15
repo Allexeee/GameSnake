@@ -40,6 +40,7 @@ public class Snake
   public class StorageBody
   {
     List<Coordinate> _all = new List<Coordinate>();
+    List<Coordinate> _ = new List<Coordinate>();
 
     public void Add(Coordinate coordinate)
     {
@@ -50,6 +51,8 @@ public class Snake
     public Coordinate GetHead() => _all[0];
     public Coordinate GetTail() => _all[_all.Count - 1];
 
+    // TODO: Вызывает ошибку "коллекция была изменена во время перебора"
+    // System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
     public IEnumerable<Coordinate> GetTorso()
     {
       var enumerator = _all.GetEnumerator();
@@ -110,7 +113,7 @@ public class SnakeMotion
   void MoveHead(Direction direction)
   {
     var prev = _all()[0];
-    var next = Globals.GetClamped(GetNext(direction, prev));
+    var next = Config.GetClamped(GetNext(direction, prev));
     _all()[0] = next;
   }
 

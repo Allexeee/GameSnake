@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "REAJXfOFeYcE8jEniumuPx5nzMdWEb96gQdjOxlMNbPAlGMhTb0GzMYV7ZAESuaXkzOp9FjZ7Y+u/Xv3hWrdDw==",
+  "dgSpecHash": "TF7v7+xYqUirAPsGygOgyqtFgogZhYZI9f5vfO+DX+NM1XsQI2+kwpkZB0LFulryHoh7Xpo7ikTN+nR0rA8tBw==",
   "success": true,
   "projectFilePath": "D:\\Profiles\\aleks\\Documents\\GameSnake\\GameSnake.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\aleks\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
-    "C:\\Users\\aleks\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.toolkit.highperformance\\7.1.1\\microsoft.toolkit.highperformance.7.1.1.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\raylib-cslo\\4.0.0-rc.5.0\\raylib-cslo.4.0.0-rc.5.0.nupkg.sha512"
   ],
   "logs": []
 }
